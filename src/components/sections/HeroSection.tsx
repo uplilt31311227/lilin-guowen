@@ -104,73 +104,85 @@ export default function HeroSection() {
           <div className="relative flex justify-center items-center order-1 lg:order-2">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
 
-              {/* Warm glow behind teacher */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-transparent rounded-full blur-3xl scale-110" />
-              <div className="absolute inset-10 bg-gradient-to-t from-amber-400/15 to-transparent rounded-full blur-2xl" />
+              {/* Outer glow effect */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-transparent rounded-full blur-3xl" />
 
-              {/* Animated rings - respects reduced motion */}
-              <div className="absolute inset-0 motion-safe:animate-[spin_30s_linear_infinite] motion-reduce:animate-none">
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-400/20" />
-              </div>
-              <div className="absolute inset-6 motion-safe:animate-[spin_25s_linear_infinite_reverse] motion-reduce:animate-none">
-                <div className="absolute inset-0 rounded-full border border-amber-300/15" />
-              </div>
-              <div className="absolute inset-12 motion-safe:animate-[spin_35s_linear_infinite] motion-reduce:animate-none">
-                <div className="absolute inset-0 rounded-full border border-white/10" />
+              {/* Animated decorative rings */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute w-[110%] h-[110%] rounded-full border border-amber-400/20 motion-safe:animate-[spin_40s_linear_infinite]" />
+                <div className="absolute w-[95%] h-[95%] rounded-full border border-dashed border-white/10 motion-safe:animate-[spin_30s_linear_infinite_reverse]" />
               </div>
 
-              {/* Skill badges */}
+              {/* Main image container with gradient background */}
+              <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#1e3a5f] via-[#1a365d] to-[#0f2744] shadow-2xl shadow-black/30">
+                {/* Inner glow */}
+                <div className="absolute inset-0 bg-gradient-to-t from-amber-500/10 via-transparent to-white/5" />
+
+                {/* Decorative top accent */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
+
+                {/* Teacher Image - properly contained */}
+                <div className="relative flex justify-center items-end min-h-[350px] sm:min-h-[420px] lg:min-h-[480px] px-4 pt-8">
+                  <Image
+                    src="/lilin-guowen/images/形象照 去背.png"
+                    alt="立霖老師 - 專業國文家教"
+                    width={360}
+                    height={450}
+                    className="object-contain object-bottom relative z-10 max-h-[320px] sm:max-h-[380px] lg:max-h-[440px]"
+                    priority
+                  />
+                </div>
+
+                {/* Bottom gradient overlay for smooth blend */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0f2744] to-transparent" />
+              </div>
+
+              {/* Skill badges - floating around the card */}
               {/* 閱讀 - Left */}
-              <div className="absolute left-0 sm:-left-2 top-1/3 -translate-y-1/2 z-20 group cursor-pointer">
-                <div className="bg-white rounded-2xl w-14 h-14 sm:w-[4.5rem] sm:h-[4.5rem] flex flex-col items-center justify-center shadow-xl shadow-black/10 border border-gray-100 transition-all duration-300 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-amber-500/20">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a365d] mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute -left-3 sm:-left-6 top-1/4 z-20 group cursor-pointer">
+                <div className="bg-white rounded-2xl w-16 h-16 sm:w-20 sm:h-20 flex flex-col items-center justify-center shadow-xl shadow-black/15 border border-gray-100 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#1a365d] mb-1" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
                   </svg>
-                  <span className="text-[#1a365d] font-bold text-xs sm:text-sm">閱讀</span>
+                  <span className="text-[#1a365d] font-bold text-sm">閱讀</span>
                 </div>
               </div>
 
               {/* 寫作 - Top Right */}
-              <div className="absolute right-2 sm:right-0 top-2 sm:top-4 z-20 group cursor-pointer">
-                <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl w-14 h-14 sm:w-[4.5rem] sm:h-[4.5rem] flex flex-col items-center justify-center shadow-xl shadow-amber-500/30 transition-all duration-300 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-amber-500/40">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a365d] mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute -right-2 sm:-right-4 top-4 sm:top-6 z-20 group cursor-pointer">
+                <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl w-16 h-16 sm:w-20 sm:h-20 flex flex-col items-center justify-center shadow-xl shadow-amber-500/40 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#1a365d] mb-1" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                   </svg>
-                  <span className="text-[#1a365d] font-bold text-xs sm:text-sm">寫作</span>
+                  <span className="text-[#1a365d] font-bold text-sm">寫作</span>
                 </div>
               </div>
 
-              {/* 邏輯 - Right */}
-              <div className="absolute right-0 sm:-right-2 top-2/3 z-20 group cursor-pointer">
-                <div className="bg-white rounded-2xl w-14 h-14 sm:w-[4.5rem] sm:h-[4.5rem] flex flex-col items-center justify-center shadow-xl shadow-black/10 border border-gray-100 transition-all duration-300 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-amber-500/20">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a365d] mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+              {/* 邏輯 - Right Bottom */}
+              <div className="absolute -right-3 sm:-right-6 bottom-1/4 z-20 group cursor-pointer">
+                <div className="bg-white rounded-2xl w-16 h-16 sm:w-20 sm:h-20 flex flex-col items-center justify-center shadow-xl shadow-black/15 border border-gray-100 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#1a365d] mb-1" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
                   </svg>
-                  <span className="text-[#1a365d] font-bold text-xs sm:text-sm">邏輯</span>
+                  <span className="text-[#1a365d] font-bold text-sm">邏輯</span>
                 </div>
               </div>
 
               {/* 古文 - Bottom Left */}
-              <div className="absolute left-4 sm:left-6 bottom-4 sm:bottom-8 z-20 group cursor-pointer">
-                <div className="bg-white rounded-2xl w-14 h-14 sm:w-[4.5rem] sm:h-[4.5rem] flex flex-col items-center justify-center shadow-xl shadow-black/10 border border-gray-100 transition-all duration-300 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-amber-500/20">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a365d] mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute -left-2 sm:-left-4 bottom-8 sm:bottom-12 z-20 group cursor-pointer">
+                <div className="bg-white rounded-2xl w-16 h-16 sm:w-20 sm:h-20 flex flex-col items-center justify-center shadow-xl shadow-black/15 border border-gray-100 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#1a365d] mb-1" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                   </svg>
-                  <span className="text-[#1a365d] font-bold text-xs sm:text-sm">古文</span>
+                  <span className="text-[#1a365d] font-bold text-sm">古文</span>
                 </div>
               </div>
 
-              {/* Teacher Image */}
-              <div className="relative aspect-square flex items-end justify-center pt-8">
-                <Image
-                  src="/lilin-guowen/images/形象照 去背.png"
-                  alt="立霖老師 - 專業國文家教"
-                  width={400}
-                  height={500}
-                  className="object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                  style={{ maxHeight: '100%' }}
-                  priority
-                />
+              {/* Name badge at bottom */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20">
+                <div className="bg-white/95 backdrop-blur-sm rounded-full px-6 py-2.5 shadow-lg border border-gray-100">
+                  <p className="text-[#1a365d] font-bold text-base">立霖老師</p>
+                </div>
               </div>
             </div>
           </div>
