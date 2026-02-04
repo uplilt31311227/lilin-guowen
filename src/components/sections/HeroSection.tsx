@@ -70,33 +70,63 @@ export default function HeroSection() {
 
           {/* Image/Visual */}
           <div className="relative lg:pl-8">
-            <div className="relative">
-              {/* Compass/Navigation Visual */}
-              <div className="w-full aspect-square max-w-lg mx-auto relative">
-                {/* Outer Ring */}
-                <div className="absolute inset-0 border-4 border-[var(--navy)]/20 rounded-full animate-spin-slow" style={{ animationDuration: '30s' }} />
+            <div className="relative w-full max-w-lg mx-auto">
+              {/* Background Decorative Elements */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-[var(--gold)]/20 to-[var(--navy)]/10 rounded-3xl blur-2xl" />
 
-                {/* Middle Ring */}
-                <div className="absolute inset-8 border-2 border-[var(--gold)]/40 rounded-full" />
+              {/* Main Card */}
+              <div className="relative bg-gradient-to-b from-[var(--navy)] via-[var(--navy)] to-[var(--navy-dark)] rounded-3xl overflow-hidden shadow-2xl">
+                {/* Decorative Top Bar */}
+                <div className="h-2 bg-gradient-to-r from-[var(--gold)] via-[var(--gold-light)] to-[var(--gold)]" />
 
-                {/* Inner Circle - Teacher Image */}
-                <div className="absolute inset-16 bg-gradient-to-b from-[var(--navy)] to-[var(--navy-dark)] rounded-full flex items-center justify-center overflow-hidden">
-                  <Image
-                    src="/lilin-guowen/images/形象照 去背.png"
-                    alt="立霖老師"
-                    width={280}
-                    height={350}
-                    className="object-cover object-top scale-125 translate-y-4"
-                    priority
-                  />
+                {/* Teacher Image Container */}
+                <div className="relative pt-8 pb-0 px-8">
+                  {/* Floating Labels */}
+                  <div className="absolute top-12 left-4 bg-[var(--gold)] text-[var(--navy)] px-3 py-1 rounded-full text-sm font-bold shadow-lg z-10">
+                    閱讀
+                  </div>
+                  <div className="absolute top-12 right-4 bg-[var(--gold)] text-[var(--navy)] px-3 py-1 rounded-full text-sm font-bold shadow-lg z-10">
+                    邏輯
+                  </div>
+                  <div className="absolute bottom-24 left-4 bg-[var(--cream)] text-[var(--navy)] px-3 py-1 rounded-full text-sm font-bold shadow-lg z-10">
+                    古文
+                  </div>
+                  <div className="absolute bottom-24 right-4 bg-[var(--cream)] text-[var(--navy)] px-3 py-1 rounded-full text-sm font-bold shadow-lg z-10">
+                    寫作
+                  </div>
+
+                  {/* Teacher Image */}
+                  <div className="relative flex justify-center">
+                    <Image
+                      src="/lilin-guowen/images/形象照 去背.png"
+                      alt="立霖老師"
+                      width={320}
+                      height={400}
+                      className="object-contain relative z-0"
+                      priority
+                    />
+                  </div>
                 </div>
 
-                {/* Compass Points */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 text-[var(--gold)] font-bold">閱讀</div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 text-[var(--gold)] font-bold">寫作</div>
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 text-[var(--gold)] font-bold">古文</div>
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 text-[var(--gold)] font-bold">邏輯</div>
+                {/* Bottom Info Bar */}
+                <div className="bg-[var(--navy-dark)] px-6 py-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[var(--gold)] font-bold text-lg">立霖老師</p>
+                      <p className="text-[var(--cream)]/70 text-sm">素養教學專家</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 bg-[var(--gold)] rounded-full animate-pulse" />
+                      <div className="w-3 h-3 bg-[var(--gold)]/60 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                      <div className="w-3 h-3 bg-[var(--gold)]/30 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              {/* Floating Accent Elements */}
+              <div className="absolute -top-6 -right-6 w-20 h-20 bg-[var(--gold)]/20 rounded-full blur-xl" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[var(--navy)]/30 rounded-full blur-xl" />
             </div>
           </div>
         </div>
