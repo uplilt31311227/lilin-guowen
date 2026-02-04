@@ -79,16 +79,16 @@ export default function HeroSection() {
                 {/* Middle Ring */}
                 <div className="absolute inset-8 border-2 border-[var(--gold)]/40 rounded-full" />
 
-                {/* Inner Circle - Teacher Image Placeholder */}
-                <div className="absolute inset-16 bg-[var(--navy)] rounded-full flex items-center justify-center overflow-hidden">
-                  <div className="text-center text-[var(--cream)]">
-                    <div className="w-32 h-32 mx-auto mb-4 bg-[var(--navy-light)] rounded-full flex items-center justify-center">
-                      <svg className="w-16 h-16 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                    <span className="text-sm opacity-60">老師形象照</span>
-                  </div>
+                {/* Inner Circle - Teacher Image */}
+                <div className="absolute inset-16 bg-gradient-to-b from-[var(--navy)] to-[var(--navy-dark)] rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/lilin-guowen/images/形象照 去背.png"
+                    alt="立霖老師"
+                    width={280}
+                    height={350}
+                    className="object-cover object-top scale-125 translate-y-4"
+                    priority
+                  />
                 </div>
 
                 {/* Compass Points */}

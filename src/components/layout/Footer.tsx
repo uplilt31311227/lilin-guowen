@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,11 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[var(--gold)] rounded-lg flex items-center justify-center">
-                <span className="text-[var(--navy)] font-bold text-xl">霖</span>
-              </div>
-              <span className="font-bold text-xl">立霖國文</span>
+            <div className="flex items-center mb-4">
+              <Image
+                src="/lilin-guowen/images/立霖國文書法字 去背.png"
+                alt="立霖國文"
+                width={160}
+                height={45}
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-[var(--cream)]/80 mb-4 max-w-md">
               人生沒有 Google，但有經典可循。
