@@ -151,187 +151,207 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Visual Section - Right Side with Golden Armillary Sphere */}
+          {/* Visual Section - Right Side with Enhanced Golden Armillary Sphere */}
           <div className="relative flex justify-center items-center order-1 lg:order-2">
             <div className="relative w-full max-w-md lg:max-w-lg">
 
-              {/* Armillary Sphere (混天儀) - Outer Ring */}
-              <div className="absolute inset-[-20%] animate-spin-very-slow">
+              {/* ========== ENHANCED ARMILLARY SPHERE (渾天儀) ========== */}
+
+              {/* Outer Glow Ring - Pulsing */}
+              <div className="absolute inset-[-25%] animate-spin-very-slow">
                 <svg viewBox="0 0 400 400" className="w-full h-full">
                   <defs>
-                    <linearGradient id="goldGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.8"/>
-                      <stop offset="50%" stopColor="#FBBF24" stopOpacity="1"/>
-                      <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.8"/>
+                    <linearGradient id="goldGradientOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.4"/>
+                      <stop offset="50%" stopColor="#FBBF24" stopOpacity="0.8"/>
+                      <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.4"/>
                     </linearGradient>
-                    <filter id="glow1">
-                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <filter id="glowStrong">
+                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                    <filter id="glowSoft">
+                      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
                       <feMerge>
                         <feMergeNode in="coloredBlur"/>
                         <feMergeNode in="SourceGraphic"/>
                       </feMerge>
                     </filter>
                   </defs>
-                  <ellipse cx="200" cy="200" rx="180" ry="180" fill="none" stroke="url(#goldGradient1)" strokeWidth="1.5" filter="url(#glow1)" opacity="0.6"/>
+                  <circle cx="200" cy="200" r="190" fill="none" stroke="url(#goldGradientOuter)" strokeWidth="1" filter="url(#glowSoft)" opacity="0.5" strokeDasharray="20 10"/>
                 </svg>
               </div>
 
-              {/* Armillary Sphere - Middle Ring (tilted) */}
-              <div className="absolute inset-[-10%] animate-spin-slow-reverse">
+              {/* Main Outer Ring */}
+              <div className="absolute inset-[-18%] animate-spin-very-slow">
+                <svg viewBox="0 0 400 400" className="w-full h-full">
+                  <defs>
+                    <linearGradient id="goldGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.9"/>
+                      <stop offset="50%" stopColor="#FBBF24" stopOpacity="1"/>
+                      <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.9"/>
+                    </linearGradient>
+                  </defs>
+                  <ellipse cx="200" cy="200" rx="175" ry="175" fill="none" stroke="url(#goldGradient1)" strokeWidth="2" filter="url(#glowStrong)" opacity="0.7"/>
+                </svg>
+              </div>
+
+              {/* Middle Tilted Ring - Reverse Rotation */}
+              <div className="absolute inset-[-8%] animate-spin-slow-reverse">
                 <svg viewBox="0 0 400 400" className="w-full h-full">
                   <defs>
                     <linearGradient id="goldGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.6"/>
+                      <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.7"/>
                       <stop offset="50%" stopColor="#FCD34D" stopOpacity="1"/>
-                      <stop offset="100%" stopColor="#FBBF24" stopOpacity="0.6"/>
+                      <stop offset="100%" stopColor="#FBBF24" stopOpacity="0.7"/>
                     </linearGradient>
                   </defs>
-                  <ellipse cx="200" cy="200" rx="160" ry="80" fill="none" stroke="url(#goldGradient2)" strokeWidth="2" filter="url(#glow1)" transform="rotate(-20, 200, 200)"/>
+                  <ellipse cx="200" cy="200" rx="155" ry="70" fill="none" stroke="url(#goldGradient2)" strokeWidth="2.5" filter="url(#glowStrong)" transform="rotate(-25, 200, 200)"/>
                 </svg>
               </div>
 
-              {/* Armillary Sphere - Inner Ring (opposite tilt) */}
-              <div className="absolute inset-[5%] animate-spin-medium">
+              {/* Inner Tilted Ring - Opposite Direction */}
+              <div className="absolute inset-[2%] animate-spin-medium">
                 <svg viewBox="0 0 400 400" className="w-full h-full">
                   <defs>
                     <linearGradient id="goldGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.7"/>
+                      <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.8"/>
                       <stop offset="50%" stopColor="#FBBF24" stopOpacity="1"/>
-                      <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.7"/>
+                      <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.8"/>
                     </linearGradient>
                   </defs>
-                  <ellipse cx="200" cy="200" rx="140" ry="60" fill="none" stroke="url(#goldGradient3)" strokeWidth="2" filter="url(#glow1)" transform="rotate(35, 200, 200)"/>
+                  <ellipse cx="200" cy="200" rx="135" ry="55" fill="none" stroke="url(#goldGradient3)" strokeWidth="2.5" filter="url(#glowStrong)" transform="rotate(40, 200, 200)"/>
                 </svg>
               </div>
 
-              {/* Vertical Golden Ring */}
-              <div className="absolute inset-[0%]">
+              {/* Vertical Ring */}
+              <div className="absolute inset-[5%] animate-spin-very-slow" style={{ animationDirection: 'reverse' }}>
                 <svg viewBox="0 0 400 400" className="w-full h-full">
-                  <ellipse cx="200" cy="200" rx="20" ry="170" fill="none" stroke="url(#goldGradient2)" strokeWidth="1.5" filter="url(#glow1)" opacity="0.5"/>
+                  <ellipse cx="200" cy="200" rx="18" ry="160" fill="none" stroke="url(#goldGradient2)" strokeWidth="1.5" filter="url(#glowSoft)" opacity="0.6"/>
                 </svg>
               </div>
 
-              {/* Golden Halo Glow behind teacher */}
-              <div className="absolute inset-[10%] bg-gradient-radial from-amber-400/30 via-amber-500/10 to-transparent rounded-full blur-2xl" />
+              {/* Horizontal Accent Ring */}
+              <div className="absolute inset-[8%]">
+                <svg viewBox="0 0 400 400" className="w-full h-full animate-pulse-slow">
+                  <ellipse cx="200" cy="200" rx="150" ry="15" fill="none" stroke="url(#goldGradient1)" strokeWidth="1" filter="url(#glowSoft)" opacity="0.4"/>
+                </svg>
+              </div>
 
-              {/* Small floating golden particles */}
-              <div className="absolute top-[15%] left-[20%] w-2 h-2 bg-amber-400 rounded-full animate-pulse-slow opacity-60 blur-[1px]" />
-              <div className="absolute top-[25%] right-[15%] w-1.5 h-1.5 bg-yellow-300 rounded-full animate-pulse-medium opacity-70 blur-[1px]" />
-              <div className="absolute bottom-[30%] left-[15%] w-1 h-1 bg-amber-300 rounded-full animate-pulse-slow opacity-50 blur-[0.5px]" />
-              <div className="absolute bottom-[20%] right-[25%] w-2 h-2 bg-amber-400 rounded-full animate-pulse-medium opacity-60 blur-[1px]" />
+              {/* Center Core Glow */}
+              <div className="absolute inset-[25%] bg-gradient-radial from-amber-400/25 via-amber-500/10 to-transparent rounded-full blur-2xl animate-pulse-slow" />
 
-              {/* Teacher Image Container */}
+              {/* Floating Golden Particles - Enhanced */}
+              <div className="absolute top-[12%] left-[18%] w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse-slow opacity-70 blur-[1px]" />
+              <div className="absolute top-[22%] right-[12%] w-2 h-2 bg-yellow-300 rounded-full animate-pulse-medium opacity-80 blur-[1px]" />
+              <div className="absolute bottom-[28%] left-[12%] w-1.5 h-1.5 bg-amber-300 rounded-full animate-pulse-slow opacity-60 blur-[0.5px]" />
+              <div className="absolute bottom-[18%] right-[22%] w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse-medium opacity-70 blur-[1px]" />
+              <div className="absolute top-[40%] left-[8%] w-1 h-1 bg-yellow-400 rounded-full animate-pulse-medium opacity-50" />
+              <div className="absolute bottom-[40%] right-[8%] w-1.5 h-1.5 bg-amber-300 rounded-full animate-pulse-slow opacity-55" />
+
+              {/* ========== TEACHER IMAGE CONTAINER ========== */}
               <div className="relative flex justify-center items-end min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]">
-                {/* Outer golden glow halo effect */}
+                {/* Golden Halo Glow */}
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 bottom-[8%] w-[70%] h-[80%] rounded-full blur-3xl z-[1]"
+                  className="absolute left-1/2 -translate-x-1/2 bottom-[5%] w-[75%] h-[85%] rounded-full blur-3xl z-[1]"
                   style={{
-                    background: 'radial-gradient(circle, rgba(251,191,36,0.2) 0%, rgba(245,158,11,0.08) 50%, transparent 100%)',
+                    background: 'radial-gradient(circle, rgba(251,191,36,0.25) 0%, rgba(245,158,11,0.1) 50%, transparent 100%)',
                   }}
                 />
-                {/* Image container with elliptical mask for elegant crop effect */}
-                <div
-                  className="relative z-10 overflow-hidden"
+                {/* Teacher Image - Using Updated Transparent PNG */}
+                <Image
+                  src="/lilin-guowen/images/形象照 去背.png"
+                  alt="立霖老師 - 專業國文家教"
+                  width={420}
+                  height={520}
+                  className="object-contain object-bottom relative z-10 max-h-[360px] sm:max-h-[420px] lg:max-h-[500px]"
                   style={{
-                    clipPath: 'ellipse(50% 52% at 50% 48%)',
-                    WebkitClipPath: 'ellipse(50% 52% at 50% 48%)',
+                    filter: 'drop-shadow(0 0 30px rgba(251,191,36,0.3)) drop-shadow(0 10px 40px rgba(0,0,0,0.4))',
                   }}
-                >
-                  <Image
-                    src="/lilin-guowen/images/形象照.png"
-                    alt="立霖老師 - 專業國文家教"
-                    width={440}
-                    height={550}
-                    className="object-cover object-top max-h-[400px] sm:max-h-[460px] lg:max-h-[540px]"
-                    style={{
-                      filter: 'drop-shadow(0 0 20px rgba(251,191,36,0.2))',
-                    }}
-                    priority
-                  />
-                </div>
-                {/* Decorative golden border ring */}
-                <div
-                  className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[88%] h-[95%] rounded-[50%] border-2 border-amber-400/25 z-[5] pointer-events-none"
+                  priority
                 />
               </div>
 
-              {/* Name plate with oriental design */}
+              {/* Name Plate with Oriental Design */}
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20">
                 <div className="relative">
-                  {/* Decorative lines */}
                   <div className="absolute -left-8 top-1/2 -translate-y-1/2 w-6 h-[1px] bg-gradient-to-r from-transparent to-amber-400/60" />
                   <div className="absolute -right-8 top-1/2 -translate-y-1/2 w-6 h-[1px] bg-gradient-to-l from-transparent to-amber-400/60" />
-
                   <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/40 rounded-lg px-6 py-2.5 shadow-lg shadow-amber-500/10">
                     <p className="text-amber-300 font-bold tracking-wider">立霖老師</p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Skill Cards with Oriental Style - Hidden on very small screens */}
-              {/* 閱讀理解 */}
+              {/* ========== FLOATING SKILL CARDS - REDESIGNED WITH DISTINCT COLORS ========== */}
+
+              {/* 閱讀理解 - Blue Theme (Logic & Analysis) */}
               <div className="absolute left-0 sm:-left-8 top-[25%] z-30 hidden sm:block">
-                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
+                <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 backdrop-blur-sm border border-blue-400/40 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-blue-500/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-blue-400/60 hover:shadow-blue-500/30">
                   <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center shadow-md shadow-blue-500/30">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-amber-200 font-bold text-xs sm:text-sm">閱讀理解</p>
-                      <p className="text-slate-400 text-xs hidden sm:block">邏輯思考訓練</p>
+                      <p className="text-blue-200 font-bold text-xs sm:text-sm">閱讀理解</p>
+                      <p className="text-blue-300/60 text-xs hidden sm:block">邏輯思考訓練</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* 寫作表達 */}
+              {/* 寫作表達 - Emerald Theme (Creativity & Growth) */}
               <div className="absolute right-0 sm:-right-6 top-[15%] z-30 hidden sm:block">
-                <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/40 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-emerald-500/40 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-emerald-500/50">
                   <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-[#0A1A35]/30 flex items-center justify-center">
-                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-[#0A1A35]" viewBox="0 0 24 24" fill="currentColor">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-[#0A1A35] font-bold text-xs sm:text-sm">寫作表達</p>
-                      <p className="text-[#0A1A35]/70 text-xs hidden sm:block">創意思維培養</p>
+                      <p className="text-white font-bold text-xs sm:text-sm">寫作表達</p>
+                      <p className="text-white/70 text-xs hidden sm:block">創意思維培養</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* 古文素養 */}
+              {/* 古文素養 - Purple/Violet Theme (Wisdom & Classics) */}
               <div className="absolute right-0 sm:-right-8 bottom-[32%] z-30 hidden sm:block">
-                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
+                <div className="bg-gradient-to-br from-violet-500/20 to-purple-600/10 backdrop-blur-sm border border-violet-400/40 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-violet-500/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-violet-400/60 hover:shadow-violet-500/30">
                   <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center shadow-md shadow-violet-500/30">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-amber-200 font-bold text-xs sm:text-sm">古文素養</p>
-                      <p className="text-slate-400 text-xs hidden sm:block">經典智慧傳承</p>
+                      <p className="text-violet-200 font-bold text-xs sm:text-sm">古文素養</p>
+                      <p className="text-violet-300/60 text-xs hidden sm:block">經典智慧傳承</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* 考試策略 */}
+              {/* 考試策略 - Orange/Amber Theme (Strategy & Action) */}
               <div className="absolute left-0 sm:-left-6 bottom-[22%] z-30 hidden sm:block">
-                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
+                <div className="bg-gradient-to-br from-orange-500/20 to-amber-600/10 backdrop-blur-sm border border-orange-400/40 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-orange-500/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-orange-400/60 hover:shadow-orange-500/30">
                   <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center shadow-md shadow-orange-500/30">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-amber-200 font-bold text-xs sm:text-sm">考試策略</p>
-                      <p className="text-slate-400 text-xs hidden sm:block">精準答題技巧</p>
+                      <p className="text-orange-200 font-bold text-xs sm:text-sm">考試策略</p>
+                      <p className="text-orange-300/60 text-xs hidden sm:block">精準答題技巧</p>
                     </div>
                   </div>
                 </div>
