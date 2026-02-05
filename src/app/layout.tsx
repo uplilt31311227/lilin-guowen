@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "立霖國文 | 素養教學領航者",
   description: "人生沒有 Google，但有經典可循。帶你讀懂文章邏輯，寫出生命厚度。會考、學測國文專業輔導。",
   keywords: ["國文", "會考", "學測", "素養教學", "閱讀理解", "作文", "補習"],
+  icons: {
+    icon: "/lilin-guowen/icon.png",
+    apple: "/lilin-guowen/icon.png",
+  },
   openGraph: {
     title: "立霖國文 | 素養教學領航者",
     description: "人生沒有 Google，但有經典可循。帶你讀懂文章邏輯，寫出生命厚度。",
