@@ -8,7 +8,7 @@ interface CardProps {
 
 export default function Card({ children, className = '', hover = true }: CardProps) {
   return (
-    <div className={`card ${hover ? '' : 'hover:transform-none hover:shadow-none'} ${className}`}>
+    <div className={`card card-shadow-md ${hover ? 'card-shadow-hover' : ''} ${className}`}>
       {children}
     </div>
   );

@@ -169,3 +169,40 @@ body {
 .bg-gradient-radial {
   background: radial-gradient(circle, var(--tw-gradient-stops));
 }
+
+/* ========================================
+   Unified Card Shadow System
+   ======================================== */
+
+.card-shadow-sm {
+  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.08);
+}
+
+.card-shadow-md {
+  box-shadow: 0 4px 16px rgba(26, 54, 93, 0.1);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 8px 24px rgba(26, 54, 93, 0.12);
+}
+
+.card-shadow-hover {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 12px 32px rgba(26, 54, 93, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Mobile Responsive Improvements
+   ======================================== */
+
+@media (max-width: 639px) {
+  /* Adjust hero padding on mobile */
+  .hero-mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

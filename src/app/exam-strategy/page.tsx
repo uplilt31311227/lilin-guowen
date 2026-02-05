@@ -80,20 +80,20 @@ export default function ExamStrategyPage() {
           subtitle="了解你的位置，設定精準目標"
         />
 
-        <div className="overflow-x-auto mb-12">
-          <div className="flex gap-4 min-w-max justify-center">
+        <div className="overflow-x-auto mb-12 pb-2">
+          <div className="flex gap-3 sm:gap-4 lg:gap-6 min-w-max justify-center px-4">
             {examLevels.map((item, index) => (
               <div
                 key={index}
-                className="w-32 text-center p-4 rounded-xl bg-white shadow-md"
+                className="w-28 sm:w-32 text-center p-3 sm:p-4 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <div
-                  className="text-3xl font-bold mb-2"
+                  className="text-2xl sm:text-3xl font-bold mb-2"
                   style={{ color: item.color }}
                 >
                   {item.level}
                 </div>
-                <div className="text-sm text-[var(--navy)] mb-1">{item.questions}</div>
+                <div className="text-xs sm:text-sm text-[var(--navy)] mb-1">{item.questions}</div>
                 <div className="text-xs text-[var(--navy-light)]">{item.description}</div>
               </div>
             ))}

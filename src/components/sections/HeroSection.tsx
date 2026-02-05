@@ -222,6 +222,8 @@ export default function HeroSection() {
 
               {/* Teacher Image Container */}
               <div className="relative flex justify-center items-end min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]">
+                {/* Background glow to prevent transparent background issues */}
+                <div className="absolute inset-x-[15%] bottom-0 h-[85%] bg-gradient-to-t from-[#0A1A35] via-transparent to-transparent rounded-full blur-xl" />
                 <Image
                   src="/lilin-guowen/images/形象照 去背.png"
                   alt="立霖老師 - 專業國文家教"
@@ -245,18 +247,18 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating Skill Cards with Oriental Style */}
+              {/* Floating Skill Cards with Oriental Style - Hidden on very small screens */}
               {/* 閱讀理解 */}
-              <div className="absolute -left-4 sm:-left-8 top-[25%] z-30">
-                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-3 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute left-0 sm:-left-8 top-[25%] z-30 hidden sm:block">
+                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-amber-200 font-bold text-sm">閱讀理解</p>
+                      <p className="text-amber-200 font-bold text-xs sm:text-sm">閱讀理解</p>
                       <p className="text-slate-400 text-xs hidden sm:block">邏輯思考訓練</p>
                     </div>
                   </div>
@@ -264,16 +266,16 @@ export default function HeroSection() {
               </div>
 
               {/* 寫作表達 */}
-              <div className="absolute -right-4 sm:-right-6 top-[15%] z-30">
-                <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl p-3 sm:p-4 shadow-lg shadow-amber-500/40 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#0A1A35]/30 flex items-center justify-center">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#0A1A35]" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute right-0 sm:-right-6 top-[15%] z-30 hidden sm:block">
+                <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/40 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-[#0A1A35]/30 flex items-center justify-center">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-[#0A1A35]" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-[#0A1A35] font-bold text-sm">寫作表達</p>
+                      <p className="text-[#0A1A35] font-bold text-xs sm:text-sm">寫作表達</p>
                       <p className="text-[#0A1A35]/70 text-xs hidden sm:block">創意思維培養</p>
                     </div>
                   </div>
@@ -281,16 +283,16 @@ export default function HeroSection() {
               </div>
 
               {/* 古文素養 */}
-              <div className="absolute -right-4 sm:-right-8 bottom-[32%] z-30">
-                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-3 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute right-0 sm:-right-8 bottom-[32%] z-30 hidden sm:block">
+                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-amber-200 font-bold text-sm">古文素養</p>
+                      <p className="text-amber-200 font-bold text-xs sm:text-sm">古文素養</p>
                       <p className="text-slate-400 text-xs hidden sm:block">經典智慧傳承</p>
                     </div>
                   </div>
@@ -298,16 +300,16 @@ export default function HeroSection() {
               </div>
 
               {/* 考試策略 */}
-              <div className="absolute -left-4 sm:-left-6 bottom-[22%] z-30">
-                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-3 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute left-0 sm:-left-6 bottom-[22%] z-30 hidden sm:block">
+                <div className="bg-[#0A1A35]/90 backdrop-blur-sm border border-amber-400/30 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-amber-500/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-amber-400/50">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
+                      <svg className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-amber-200 font-bold text-sm">考試策略</p>
+                      <p className="text-amber-200 font-bold text-xs sm:text-sm">考試策略</p>
                       <p className="text-slate-400 text-xs hidden sm:block">精準答題技巧</p>
                     </div>
                   </div>
