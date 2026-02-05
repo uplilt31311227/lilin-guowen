@@ -306,18 +306,18 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* 寫作表達 - Emerald Theme (Creativity & Growth) */}
+              {/* 寫作表達 - Emerald Theme (Creativity & Growth) - 半透明風格 */}
               <div className="absolute right-0 sm:-right-6 top-[15%] z-30 hidden sm:block">
-                <div className="bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-emerald-500/40 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-emerald-500/50">
+                <div className="bg-gradient-to-br from-emerald-500/20 to-teal-600/10 backdrop-blur-sm border border-emerald-400/40 rounded-xl p-2.5 sm:p-4 shadow-lg shadow-emerald-500/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-emerald-400/60 hover:shadow-emerald-500/30">
                   <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-md shadow-emerald-500/30">
                       <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="text-white font-bold text-xs sm:text-sm">寫作表達</p>
-                      <p className="text-white/70 text-xs hidden sm:block">創意思維培養</p>
+                      <p className="text-emerald-200 font-bold text-xs sm:text-sm">寫作表達</p>
+                      <p className="text-emerald-300/60 text-xs hidden sm:block">創意思維培養</p>
                     </div>
                   </div>
                 </div>

@@ -19,13 +19,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center py-1">
+          <Link href="/" className="flex items-center py-2">
             <Image
               src="/lilin-guowen/images/立霖國文書法字 去背.png"
               alt="立霖國文"
-              width={180}
-              height={48}
-              className="h-12 sm:h-14 w-auto object-contain"
+              width={160}
+              height={44}
+              className="h-10 sm:h-11 w-auto object-contain"
               priority
             />
           </Link>
