@@ -222,15 +222,36 @@ export default function HeroSection() {
 
               {/* Teacher Image Container */}
               <div className="relative flex justify-center items-end min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]">
-                {/* Background glow to prevent transparent background issues */}
-                <div className="absolute inset-x-[15%] bottom-0 h-[85%] bg-gradient-to-t from-[#0A1A35] via-transparent to-transparent rounded-full blur-xl" />
-                <Image
-                  src="/lilin-guowen/images/形象照 去背.png"
-                  alt="立霖老師 - 專業國文家教"
-                  width={420}
-                  height={520}
-                  className="object-contain object-bottom relative z-10 max-h-[360px] sm:max-h-[420px] lg:max-h-[500px] drop-shadow-[0_0_40px_rgba(251,191,36,0.3)]"
-                  priority
+                {/* Outer golden glow halo effect */}
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 bottom-[8%] w-[70%] h-[80%] rounded-full blur-3xl z-[1]"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(251,191,36,0.2) 0%, rgba(245,158,11,0.08) 50%, transparent 100%)',
+                  }}
+                />
+                {/* Image container with elliptical mask for elegant crop effect */}
+                <div
+                  className="relative z-10 overflow-hidden"
+                  style={{
+                    clipPath: 'ellipse(50% 52% at 50% 48%)',
+                    WebkitClipPath: 'ellipse(50% 52% at 50% 48%)',
+                  }}
+                >
+                  <Image
+                    src="/lilin-guowen/images/形象照.png"
+                    alt="立霖老師 - 專業國文家教"
+                    width={440}
+                    height={550}
+                    className="object-cover object-top max-h-[400px] sm:max-h-[460px] lg:max-h-[540px]"
+                    style={{
+                      filter: 'drop-shadow(0 0 20px rgba(251,191,36,0.2))',
+                    }}
+                    priority
+                  />
+                </div>
+                {/* Decorative golden border ring */}
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[88%] h-[95%] rounded-[50%] border-2 border-amber-400/25 z-[5] pointer-events-none"
                 />
               </div>
 
