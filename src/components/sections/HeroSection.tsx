@@ -75,23 +75,23 @@ export default function HeroSection() {
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <span className="text-amber-200 text-sm font-medium">素養教學領航者</span>
+              <span className="text-amber-200 text-sm font-medium">素養教學領航者 · 家長與孩子的溝通橋樑</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.15] mb-6 tracking-tight">
-              人生沒有 Google
+              不只提升分數
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-300">
-                但有經典可循
+                更引導人生方向
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              帶你讀懂文章邏輯，寫出生命厚度。
+              「人生沒有 Google，但有經典可循。」
               <br className="hidden sm:block" />
-              用現代思維解讀經典智慧，讓國文成為思考的武器。
+              結合考試技巧與素養教育，讓國文成為孩子一生受用的思考武器。
             </p>
 
             {/* CTA Buttons */}
@@ -101,17 +101,17 @@ export default function HeroSection() {
                 variant="primary"
                 className="text-center px-8 py-4 text-base font-semibold !bg-gradient-to-r !from-amber-400 !to-amber-500 !text-[#0A1A35] shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-0.5 transition-all duration-200"
               >
-                免費學習診斷
+                預約免費診斷諮詢
                 <svg className="w-5 h-5 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Button>
               <Button
-                href="/methodology"
+                href="/testimonials"
                 variant="secondary"
                 className="text-center px-8 py-4 text-base font-medium !border-amber-400/40 !text-amber-200 !bg-transparent hover:!bg-amber-400/10 hover:!border-amber-400/60 transition-all duration-200"
               >
-                了解閱破系統
+                看看學員怎麼說
               </Button>
             </div>
 

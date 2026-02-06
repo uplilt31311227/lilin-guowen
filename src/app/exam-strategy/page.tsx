@@ -3,8 +3,8 @@ import Card, { CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 
 export const metadata = {
-  title: '考試策略中心 | 立霖國文',
-  description: '會考、學測國文專業策略。國中素養強化地基，高中理科腦寫作急救。',
+  title: '考試資訊 | 立霖國文',
+  description: '會考、學測國文考試資訊與數據分析。了解考試趨勢，精準備戰。',
 };
 
 const examLevels = [
@@ -60,15 +60,15 @@ export default function ExamStrategyPage() {
       <Section background="navy">
         <div className="text-center py-12">
           <span className="inline-block px-4 py-1 bg-[var(--gold)] text-[var(--navy)] text-sm font-bold rounded-full mb-6">
-            EXAM STRATEGY CENTER
+            考試資訊
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--cream)] mb-4">
-            考試策略中心
+            掌握考試趨勢，精準備戰
           </h1>
           <p className="text-xl text-[var(--cream)]/80 max-w-2xl mx-auto">
             數據分析 × 精準策略
             <br />
-            針對國中會考與高中學測的專業戰略
+            了解國中會考與高中學測的最新趨勢
           </p>
         </div>
       </Section>

@@ -6,9 +6,9 @@ import { useState } from 'react';
 
 const navLinks = [
   { href: '/', label: '首頁' },
-  { href: '/methodology', label: '閱破實驗室' },
-  { href: '/exam-strategy', label: '考試策略' },
+  { href: '/methodology', label: '課程介紹' },
   { href: '/testimonials', label: '學員見證' },
+  { href: '/exam-strategy', label: '考試資訊' },
 ];
 
 export default function Navbar() {

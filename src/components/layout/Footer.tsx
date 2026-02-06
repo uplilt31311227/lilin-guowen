@@ -34,12 +34,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/methodology" className="text-[var(--cream)]/80 hover:text-[var(--gold)] transition-colors">
-                  閱破實驗室
-                </Link>
-              </li>
-              <li>
-                <Link href="/exam-strategy" className="text-[var(--cream)]/80 hover:text-[var(--gold)] transition-colors">
-                  考試策略
+                  課程介紹
                 </Link>
               </li>
               <li>
@@ -48,8 +43,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/exam-strategy" className="text-[var(--cream)]/80 hover:text-[var(--gold)] transition-colors">
+                  考試資訊
+                </Link>
+              </li>
+              <li>
                 <Link href="/diagnosis" className="text-[var(--cream)]/80 hover:text-[var(--gold)] transition-colors">
-                  免費診斷
+                  免費診斷諮詢
                 </Link>
               </li>
             </ul>
